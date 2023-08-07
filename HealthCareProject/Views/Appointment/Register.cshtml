@@ -1,0 +1,76 @@
+﻿@model HealthCareProject.Models.Appointment
+
+
+@{ ViewData["Title"] = "Booking Appointment";
+}
+
+<h1>Book an Appointment</h1>
+<h3>Need to register as a client first before booking one.</h3>
+<h5>
+    @Html.ActionLink("Click here", "Register", "Client")
+    to register.
+</h5>
+<h5>
+    @Html.ActionLink("Click here", "Index", "Client")
+    to view and edit list of clients.
+</h5>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Register">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @*<div class="form-group">
+            <label asp-for="DoctorId" class="control-label"></label>
+            <input asp-for="DoctorId" class="form-control" />
+            <span asp-validation-for="DoctorId" class="text-danger"></span>
+        </div>*@
+            <div class="form-group">
+                <label asp-for="ClientId" class="control-label"></label>
+                <select asp-for="ClientId" class="form-control"
+                        asp-items="@(new SelectList(ViewBag.ListofClientId, "ClientId", "FirstName"))"></select>
+                <span asp-validation-for="ClientId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DoctorId" class="control-label"></label>
+                <select asp-for="DoctorId" class="form-control"
+                        asp-items="@(new SelectList(ViewBag.ListofDoctorId, "DoctorId", "FirstName"))"></select>
+                <span asp-validation-for="DoctorId" class="text-danger"></span>
+            </div>
+            @*<div class="form-group">
+                <label asp-for="HospitalId" class="control-label"></label>
+                <select asp-for="HospitalId" class="form-control"
+                        asp-items="@(new SelectList(ViewBag.ListofHospitalId, "HospitalId", "HospitalName"))"></select>
+                <span asp-validation-for="HospitalId" class="text-danger"></span>
+            </div>*@
+            <div class="form-group">
+                <label asp-for="StartTime" class="control-label"></label>
+                <input asp-for="StartTime" class="form-control" />
+                <span asp-validation-for="StartTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EndTime" class="control-label"></label>
+                <input asp-for="EndTime" class="form-control" />
+                <span asp-validation-for="EndTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AppointmentDate" class="control-label"></label>
+                <input asp-for="AppointmentDate" class="form-control" />
+                <span asp-validation-for="AppointmentDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AppointmentStatus" class="control-label"></label>
+                <input asp-for="AppointmentStatus" class="form-control" />
+                <span asp-validation-for="AppointmentStatus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AppBookingChannelName" class="control-label"></label>
+                <input asp-for="AppBookingChannelName" class="form-control" />
+                <span asp-validation-for="AppBookingChannelName" class="text-danger"></span>
+            </div>      
+
+            <div class="form-group">
+                <input type="submit" value="Save me" class="btn btn-success" />
+                <a class="btn btn-warning" asp-area="" asp-controller="Appointment" asp-action="Index">Back</a>
+            </div>
+        </form>
+    </div>
+</div>

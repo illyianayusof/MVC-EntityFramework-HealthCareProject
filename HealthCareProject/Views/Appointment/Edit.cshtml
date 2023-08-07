@@ -1,0 +1,96 @@
+﻿@model HealthCareProject.Models.Appointment
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h4>Edit Client</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.AppointmentId)
+
+    <div >
+        <h4>Appointment Id: @Model.AppointmentId</h4>
+        <h4>Client Id: @Model.ClientId</h4>
+        <h4>Doctor Id: @Model.DoctorId</h4>
+
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-10">
+            <label asp-for="ClientId" class="control-label"></label>
+            <select asp-for="ClientId" class="form-control"
+                    asp-items="@(new SelectList(ViewBag.ListofClientId, "ClientId", "FirstName"))"></select>
+            <span asp-validation-for="ClientId" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div  class="col-md-10">
+            <label asp-for="DoctorId" class="control-label"></label>
+            <select asp-for="DoctorId" class="form-control"
+                    asp-items="@(new SelectList(ViewBag.ListofDoctorId, "DoctorId", "FirstName"))"></select>
+            <span asp-validation-for="DoctorId" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.StartTime, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.StartTime, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.StartTime, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.EndTime, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.EndTime, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.EndTime, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.AppointmentDate, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.AppointmentDate, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.AppointmentDate, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.AppointmentStatus, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.AppointmentStatus, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.AppointmentStatus, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.AppBookingChannelName, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.AppBookingChannelName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.AppBookingChannelName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save" class="btn btn-success" />
+            <button class="btn btn-warning"> @Html.ActionLink("Back to List", "Index")</button>
+        </div>
+    </div>
+
+    <br />
+    <br />
+  
+</div>
+}
+
+
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

@@ -1,0 +1,70 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<br />
+<br />
+<br />
+
+<div class="row" align="center" justify-content="center">
+    <div class="column">
+        <div class="card border-0" style="width: 14rem;">
+            <img class="card-img-top" src="https://cdn-icons-png.flaticon.com/512/3209/3209065.png" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Become a Client</h5>
+                <br />
+                <p class="card-text"> Join us so you can enjoy the benefits of making a trip to any hospital with ease.</p>
+                <a class="btn btn-primary" asp-area="" asp-controller="Client" asp-action="RegisterClient">Register as a Client</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="column">
+        <div class="card border-0" style="width: 14rem;">
+            <img class="card-img-top" src="https://cdn-icons-png.flaticon.com/512/3209/3209100.png" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Certified Doctors</h5>
+                <br />
+                <p class="card-text"> See the list of top selected doctors that are available for your service and ready to help.</p>
+                <a class="btn btn-primary" asp-area="" asp-controller="Doctor" asp-action="Search">Available Doctors</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="column">
+        <div class="card border-0" style="width: 14rem;">
+            <img class="card-img-top" src="https://cdn-icons-png.flaticon.com/512/3209/3209135.png" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Recognized Hospitals</h5>
+                <p class="card-text">Find out the available hospitals that have joined venture in order to ease your life.</p>
+                <a class="btn btn-primary" asp-area="" asp-controller="Hospital" asp-action="Search">Hospitals Available</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="column">
+        <div class="card border-0" style="width: 14rem;">
+            <img class="card-img-top" src="https://cdn-icons-png.flaticon.com/512/3209/3209058.png" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Request an Appointment</h5>
+                <p class="card-text">Book an appointment with your preferred doctors and hospitals today.</p>
+                <a class="btn btn-primary" asp-area="" asp-controller="Appointment" asp-action="IndexClient">Book One Now!</a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="column">
+        <div class="card border-0" style="width: 14rem;">
+            <img class="card-img-top" src="https://cdn-icons-png.flaticon.com/512/3209/3209000.png" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">High Rating Reviews</h5>
+                <p class="card-text">See our excellent reviews from our other existing satisfied clients. Mostly pleased.</p>
+                <a class="btn btn-primary" asp-area="" asp-controller="ClientReview" asp-action="IndexClient">View Reviews</a>
+            </div>
+        </div>
+    </div>
+</div>

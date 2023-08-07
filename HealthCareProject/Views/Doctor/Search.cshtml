@@ -1,0 +1,78 @@
+﻿@model IEnumerable<HealthCareProject.Models.Doctor>
+
+@{ ViewData["Title"] = "Doctor Search"; }
+
+<body>
+    <div class="container-fluid" align="center" justify-content="center" style="background-color:white">
+
+        <h1><b>Search for Doctor</b></h1>
+
+        <form method="get" asp-action="Search">
+            <div>
+                <input class="form" type="search" placeholder="Enter keywords here..." value="@ViewData["getdoctordetails"]" name="docsearch" style="width:200px;" />
+                <input type="submit" value="Search" class="btn btn-primary" />
+              
+
+                <br />
+            </div>
+
+            <a asp-action="Search">Show All Doctors</a>
+        </form>
+        <br />
+
+        <h3>List of Doctors</h3>
+        <table class="table-striped table-bordered">
+            <thead>
+                <tr align="center" justify-content="center">
+                    <th>
+                        @Html.DisplayNameFor(model => model.DoctorId)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.FirstName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.LastName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PracticingForm)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Specialization)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.HospitalId)
+                    </th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr align="center" justify-content="center">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DoctorId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FirstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LastName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PracticingForm)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Specialization)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HospitalId)
+                    </td>
+
+                </tr>}
+            </tbody>
+        </table>
+        <br />
+
+        <a class="btn btn-warning" asp-area="" asp-controller="ClientService" asp-action="Index">Back</a>
+    </div>
+</body>

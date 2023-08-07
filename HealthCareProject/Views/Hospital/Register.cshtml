@@ -1,0 +1,59 @@
+﻿@model HealthCareProject.Models.Hospital
+
+@{ ViewData["Title"] = "Register";
+}
+
+
+<h1>Register as a Hospital</h1>
+<div class="row" align="center">
+    <div class="col-md-4" align="center">
+        <form asp-action="Register">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+          
+            <div class="form-group">
+                <label asp-for="HospitalName" class="control-label"></label>
+                <input asp-for="HospitalName" class="form-control" />
+                <span asp-validation-for="HospitalName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FirstConsultationFee" class="control-label"></label>
+                <input asp-for="FirstConsultationFee" class="form-control" />
+                <span asp-validation-for="FirstConsultationFee" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FollowUpConsultationFee" class="control-label"></label>
+                <input asp-for="FollowUpConsultationFee" class="form-control" />
+                <span asp-validation-for="FollowUpConsultationFee" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StreetAddress" class="control-label"></label>
+                <input asp-for="StreetAddress" class="form-control" />
+                <span asp-validation-for="StreetAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="City" class="control-label"></label>
+                <input asp-for="City" class="form-control" />
+                <span asp-validation-for="City" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="State" class="control-label"></label>
+                <input asp-for="State" class="form-control" />
+                <span asp-validation-for="State" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Country" class="control-label"></label>
+                <input asp-for="Country" class="form-control" />
+                <span asp-validation-for="Country" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Pincode" class="control-label"></label>
+                <input asp-for="Pincode" class="form-control" />
+                <span asp-validation-for="Pincode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save me" class="btn btn-success" />
+                <a class="btn btn-warning" asp-area="" asp-controller="Hospital" asp-action="Index">Back</a>
+            </div>
+        </form>
+    </div>
+</div>

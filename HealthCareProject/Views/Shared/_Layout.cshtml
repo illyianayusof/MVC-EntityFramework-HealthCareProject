@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Illyiana Medicinal Center</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link href="C:\Users\admin\source\repos\HealthCare_CaseStudy\HealthCare_CaseStudy\NewFolder\StyleSheet.css" rel="stylesheet" />
+</head>
+<body>
+    <header style="background-color:lightgreen">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3" style="background-color:lavenderblush">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"></a><img src="https://fontmeme.com/permalink/211128/f41c4b4396fd509c8cc110f080f21f1d.png" alt="3d-fonts" border="0">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="ClientService" asp-action="Index">Client</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="HospitalService" asp-action="Login">Hospital</a>
+                        </li>
+
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><p><img style="height:25px" src="https://cdn-icons.flaticon.com/png/512/3059/premium/3059457.png?token=exp=1638179218~hmac=4321faa1a8256ccb3d3b7aeff0d435d2" /><b><i>&nbsp; 03 0000 0000 &nbsp;&nbsp;</i></b></p></li>
+                        <li><p><img style="height:25px" src="https://cdn-icons.flaticon.com/png/512/542/premium/542638.png?token=exp=1638179266~hmac=023b5d0e95d49435c3d74fd773f5e91f" /><b><i>&nbsp;imc@imc.com.my &nbsp;&nbsp;</i></b></p></li>
+                    </ul>
+                </div>               
+
+            </div>
+
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted" style="background-color:lavenderblush;">
+        <div class="container">
+            &copy; 2021 - Illyiana Medical Centre - 
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,104 @@
+﻿@model IEnumerable<HealthCareProject.Models.HealthCareContext>
+
+@{ ViewData["Title"] = "Index";
+
+}
+
+
+<body>
+    <div class="container" align="center" justify-content="center" style="background-color:white">
+        <h1>List of Hospitals</h1>
+
+        <a class="btn btn-success" asp-area="" asp-controller="Hospital" asp-action="Register">Register Hospital</a>
+        <a class="btn btn-warning" asp-area="" asp-controller="HospitalService" asp-action="Index">Back</a>
+
+        <br />
+        <br />
+
+        <table class="table-striped table-bordered" align="center" justify-content="center">
+            <thead>
+                <tr align="center" justify-content="center">
+                    <th>
+                        Hospital ID
+                    </th>
+                    <th>
+                        Hospital Name
+                    </th>
+                    <th>
+                        First Consultation Fee
+                    </th>
+                    <th>
+                        Follow Up Consultation Fee
+                    </th>
+                    <th>
+                        Street Address
+                    </th>
+                    <th>
+                        City
+                    </th>
+                    <th>
+                        State
+                    </th>
+                    <th>
+                        Country
+                    </th>
+                    <th>
+                        Pincode
+                    </th>
+                    <th style="width:150px">
+                        Actions
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in (IEnumerable<HealthCareProject.Models.Hospital>)ViewBag.Hospital)
+                {
+                    <tr align="center" justify-content="center">
+                        <td>
+                            @Html.DisplayFor(modelItem => item.HospitalId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.HospitalName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FirstConsultationFee)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FollowUpConsultationFee)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.StreetAddress)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.City)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.State)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Country)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Pincode)
+                        </td>
+                        <td>
+                            <button class="btn btn-warning"> @Html.ActionLink("Edit", "Edit", new { id = item.HospitalId })</button>
+                            <button class="btn btn-danger">  @Html.ActionLink("Delete", "Delete", new { id = item.HospitalId })</button>
+
+                        </td>
+
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <br />
+        <br />
+        <br />
+        <br />
+
+    </div>
+
+</body>
+

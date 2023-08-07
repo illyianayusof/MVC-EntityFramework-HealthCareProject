@@ -1,0 +1,119 @@
+﻿@model IEnumerable<HealthCareProject.Models.HealthCareContext>
+
+@{ ViewData["Title"] = "Index";
+
+}
+
+
+
+
+<div class="container-fluid" align="center" justify-content="center" style="background-color:white;">
+    <h1>Appointments</h1>
+
+    <a class="btn btn-success" asp-area="" asp-controller="Appointment" asp-action="Register"> Book an Appointment</a>
+    <a class="btn btn-warning" asp-area="" asp-controller="HospitalService" asp-action="Index">Back</a>
+
+
+    <br />
+    <br />
+
+    <table class="table-striped table-bordered">
+        <thead>
+            <tr align="center" justify-content="center">
+                <th>
+                    Appointment Id
+                </th>
+                <th>
+                    Client Id
+                </th>
+                <th>
+                    DoctorId
+                </th>
+                @*<th>
+                        Hospital Id
+                    </th>*@
+                <th>
+                    Start Time
+                </th>
+                <th>
+                    End Time
+                </th>
+                <th>
+                    Appointment Date
+                </th>
+                <th>
+                    Appointment Status
+                </th>
+
+                <th>
+                    Booking Channel Name
+                </th>
+                <th style="width:150px">
+                    Actions
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in (IEnumerable<HealthCareProject.Models.Appointment>)ViewBag.Appointment)
+            {
+
+                <tr align="center" justify-content="center">
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AppointmentId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ClientId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DoctorId)
+                    </td>
+
+                    @*<td>
+                            @foreach (var items in (IEnumerable<HealthCareProject.Models.Doctor>)ViewBag.Doctor) {
+                                @Html.DisplayFor(modelItem => items.HospitalId)}
+                        </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StartTime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EndTime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AppointmentDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AppointmentStatus)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AppBookingChannelName)
+                    </td>
+                    <td>
+                        <button class="btn btn-warning"> @Html.ActionLink("Edit", "Edit", new { id = item.AppointmentId })</button>
+                        <button class="btn btn-danger"> @Html.ActionLink("Delete", "Delete", new { id = item.AppointmentId })</button>
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+
+
+
+
+    <br />
+    <br />
+    <br />
+    <br />
+
+
+
+
+
+
+
+
+</div>

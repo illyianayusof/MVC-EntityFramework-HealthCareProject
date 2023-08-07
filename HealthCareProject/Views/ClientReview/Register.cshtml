@@ -1,0 +1,57 @@
+﻿@model HealthCareProject.Models.ClientReview
+
+
+@{ ViewData["Title"] = "Register";
+}
+
+<h1>Submit a Review</h1>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Register">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+           
+            <div class="form-group">
+                <label asp-for="ClientId" class="control-label"></label>
+                <select asp-for="ClientId" class="form-control"
+                        asp-items="@(new SelectList(ViewBag.ListofClientId, "ClientId", "FirstName"))"></select>
+                <span asp-validation-for="ClientId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DoctorId" class="control-label"></label>
+                <select asp-for="DoctorId" class="form-control"
+                        asp-items="@(new SelectList(ViewBag.ListofDoctorId, "DoctorId", "FirstName"))"></select>
+                <span asp-validation-for="DoctorId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WaitTimeRating" class="control-label"></label>
+                <input asp-for="WaitTimeRating" class="form-control" />
+                <span asp-validation-for="WaitTimeRating" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DoctorRating" class="control-label"></label>
+                <input asp-for="DoctorRating" class="form-control" />
+                <span asp-validation-for="DoctorRating" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Review" class="control-label"></label>
+                <input asp-for="Review" class="form-control" />
+                <span asp-validation-for="Review" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IsDoctorRecommended" class="control-label"></label>
+                <input asp-for="IsDoctorRecommended" class="form-control" />
+                <span asp-validation-for="IsDoctorRecommended" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReviewDate" class="control-label"></label>
+                <input asp-for="ReviewDate" class="form-control" />
+                <span asp-validation-for="ReviewDate" class="text-danger"></span>
+            </div>       
+                      
+
+            <div class="form-group">
+                <input type="submit" value="Save me" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>

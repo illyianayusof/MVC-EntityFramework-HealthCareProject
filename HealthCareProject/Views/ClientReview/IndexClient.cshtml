@@ -1,0 +1,106 @@
+﻿@model IEnumerable<HealthCareProject.Models.HealthCareContext>
+
+@{ ViewData["Title"] = "Client";
+
+}
+
+
+
+<div class="container-fluid" align="center" justify-content="center" style="background-color:white;">
+    <h1>Reviews from other Clients</h1>
+
+    <a class="btn btn-success" asp-area="" asp-controller="ClientReview" asp-action="RegisterClient">Submit a Review</a>
+    <a class="btn btn-warning" asp-area="" asp-controller="ClientService" asp-action="Index">Back</a>
+
+    <br />
+    <br />
+
+    <table class="table-striped table-bordered" align="center" justify-content="center">
+        <thead align="center" justify-content="center">
+            <tr align="center" justify-content="center">
+                <th>
+                    Id
+                </th>
+                <th>
+                    Client Id
+                </th>
+                <th>
+                    Doctor Id
+                </th>
+                <th>
+                    Wait Time Rating
+                </th>
+                <th>
+                    Doctor Rating
+                </th>
+                <th>
+                    Review
+                </th>
+                <th>
+                    Is doctor recommened? (Yes/No)
+                </th>
+                <th>
+                    Review Date
+                </th>
+                <th style="width:150px">
+                    Actions
+                </th>
+
+
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in (IEnumerable<HealthCareProject.Models.ClientReview>)ViewBag.ClientReview)
+            {
+
+                <tr align="center" justify-content="center">
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ClientId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DoctorId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.WaitTimeRating)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DoctorRating)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Review)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IsDoctorRecommended)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ReviewDate)
+                    </td>
+                    <td>
+                        <button class="btn btn-warning"> @Html.ActionLink("Edit", "EditClient", new { id = item.Id })</button>
+                        <button class="btn btn-danger"> @Html.ActionLink("Delete", "DeleteClient", new { id = item.Id })</button>
+
+
+
+                    </td>
+
+
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+
+
+
+    <br />
+    <br />
+    <br />
+    <br />
+
+</div>
